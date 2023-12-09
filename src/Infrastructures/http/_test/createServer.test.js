@@ -15,8 +15,11 @@ describe("HTTP server", () => {
     expect(response.statusCode).toEqual(404);
   });
 
+
+  //say hello 3
   describe("when GET /", () => {
-    it('should return 200 and "Hello, World 2"', async () => {
+    it('should return 200 and "Hello, World 3"', async () => {
+
       // Arrange
       const server = await createServer({});
 
@@ -29,7 +32,8 @@ describe("HTTP server", () => {
       // Assert
       const responseJson = JSON.parse(response.payload);
       expect(response.statusCode).toEqual(200);
-      expect(responseJson.value).toEqual("Hello, World 2");
+      expect(responseJson.value).toEqual("Hello, World 3");
+
     });
   });
 
