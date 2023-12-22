@@ -1,6 +1,6 @@
 {
-  "user": "ilham",
-  "password": "admin123",
+  "user": "postgres",
+  "password": "ilham",
   "host": "localhost",
   "port": 5432,
   "database": "forumapi_test"

@@ -2,19 +2,21 @@ class DeleteComment {
   constructor(payload) {
     this._verifyPayload(payload);
 
-    const { id, owner, threadId } = payload;
+    const { commentId, threadId, userId } = payload;
 
-    this.id = id;
-    this.owner = owner;
+    this.commentId = commentId;
     this.threadId = threadId;
+    this.userId = userId;
   }
 
-  _verifyPayload({ id, threadId, owner }) {
-    if (!id || !threadId || !owner) {
+  _verifyPayload({ commentId, threadId, userId }) {
+    if (!commentId || !threadId || !userId) {
       throw new Error('DELETE_COMMENT.NOT_CONTAIN_NEEDED_PROPERTY');
     }
 
-    if (typeof id !== 'string' || typeof threadId !== 'string' || typeof owner !== 'string') {
+    if (typeof commentId !== 'string'
+          || typeof threadId !== 'string'
+          || typeof userId !== 'string') {
       throw new Error('DELETE_COMMENT.NOT_MEET_DATA_TYPE_SPECIFICATION');
     }
   }
